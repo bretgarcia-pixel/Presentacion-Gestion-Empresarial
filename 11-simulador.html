@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Simulador interactivo | Punto de Equilibrio</title><link href="assets/favicon.svg" rel="icon"/><link href="styles.css" rel="stylesheet"/></head><body>
+<aside class="side" tabindex="0">
+<div class="brand"><span class="logo"><img alt="Nido de Águilas Centro Educativo" src="assets/logo-nido-de-aguilas.png"/></span><span class="brand-text">PUNTO DE EQUILIBRIO</span></div>
+<nav class="nav"><a href="index.html"><span class="ico">⌂</span><span class="label">INICIO</span></a>
+<a href="01-concepto.html"><span class="ico">⚖</span><span class="label">PUNTO DE EQUILIBRIO</span></a>
+<a href="02-costos.html"><span class="ico">◈</span><span class="label">CLASIFICACIÓN DE COSTOS</span></a>
+<a href="02-unidades.html"><span class="ico">▣</span><span class="label">PE EN UNIDADES FÍSICAS</span></a>
+<a href="03-lempiras.html"><span class="ico">L</span><span class="label">PE EN LEMPIRAS</span></a>
+<a href="03-datos-grafico.html"><span class="ico">▥</span><span class="label">DATOS Y GRÁFICO</span></a>
+<a href="04-formulas.html"><span class="ico">∑</span><span class="label">FÓRMULAS</span></a>
+<a href="04-varias-lineas.html"><span class="ico">◫</span><span class="label">VARIAS LÍNEAS</span></a>
+<a href="05-situaciones.html"><span class="ico">⇄</span><span class="label">SITUACIONES</span></a>
+<a href="06-unidades-dinero.html"><span class="ico">↔</span><span class="label">UNIDADES Y DINERO</span></a>
+<a href="07-varias-lineas.html"><span class="ico">◎</span><span class="label">MÚLTIPLES PRODUCTOS</span></a>
+<a href="08-ejemplo-milano.html"><span class="ico">M</span><span class="label">EJEMPLO MILANO</span></a>
+<a href="09-ejercicios.html"><span class="ico">✓</span><span class="label">EJERCICIOS</span></a>
+<a href="11-simulador.html"><span class="ico">⚙</span><span class="label">SIMULADOR INTERACTIVO</span></a>
+<a href="05-van.html"><span class="ico">V</span><span class="label">VALOR ACTUAL NETO</span></a>
+<a href="06-tir.html"><span class="ico">%</span><span class="label">TASA INTERNA DE RETORNO</span></a>
+<a href="10-resumen.html"><span class="ico">★</span><span class="label">RESUMEN FINAL</span></a></nav>
+<div class="side-bottom"><button class="sound-toggle on" id="soundToggle"><span class="sound-icon">🔊</span><span class="sound-label">SONIDO: ACTIVADO</span></button></div>
+</aside><main class=""><div class="content"><div class="slide-meta">14 / 17<div class="progress"><i style="width:82.4%"></i></div>Simulador interactivo</div>
+<section class="page-head">
+<span class="tag">16 · EXPERIENCIA INTERACTIVA</span>
+<h2>Simulador del <span>punto de equilibrio</span></h2>
+<p>Cambia los datos y observa en tiempo real cómo se modifica el equilibrio, el monto de ventas y la utilidad o pérdida.</p>
+</section>
+<section>
+<div class="sim-grid">
+<div class="card controls">
+<h3>1. Modifica los datos</h3>
+<label for="fixedCost">Costos fijos (L)</label><input id="fixedCost" min="0" step="100" type="number" value="5000"/>
+<label for="price">Precio de venta unitario (L)</label><input id="price" min="0.01" step="0.5" type="number" value="10"/>
+<label for="variableCost">Costo variable unitario (L)</label><input id="variableCost" min="0" step="0.5" type="number" value="5"/>
+<label for="unitsSold">Unidades vendidas</label><input id="unitsSold" min="0" step="100" type="number" value="1200"/>
+<div class="note" style="margin-top:18px"><strong>Fórmula:</strong><br/>PE = CF ÷ (PVU − CVU)</div>
+</div>
+<div class="card">
+<h3>2. Observa el resultado</h3>
+<div class="result-grid">
+<div class="result"><strong>PE en unidades</strong><b id="peUnits">—</b></div>
+<div class="result"><strong>PE en dinero</strong><b id="peMoney">—</b></div>
+<div class="result"><strong>Resultado actual</strong><b id="profit">—</b></div>
+</div>
+<div class="note ok" style="margin:15px 0"><strong>Situación:</strong> <span id="status">—</span></div>
+<div class="chart"><svg aria-label="Gráfico interactivo del punto de equilibrio" id="dynamicChart" role="img" viewbox="0 0 900 390"></svg></div>
+</div>
+</div>
+</section>
+<section id="equilibriumGame">
+<div class="card">
+<span class="tag">MINIJUEGO</span><h2>¿Puedes encontrar el equilibrio?</h2>
+<p class="explain">Responde y comprueba cuánto has aprendido. Cada respuesta correcta suma un punto y avanza a la siguiente pregunta.</p>
+<div class="metric" id="game-score" style="font-size:26px;margin:12px 0">Puntaje: 0</div>
+<div class="formula small-formula" id="game-question">Cargando pregunta…</div>
+<div class="game-options" id="game-options"></div>
+<div id="game-feedback"></div>
+</div>
+</section>
+<section>
+<div class="grid">
+<article class="card"><h3>Lectura rápida</h3><p class="explain">Si el precio aumenta manteniendo constantes los demás datos, el margen por unidad aumenta y el número de unidades necesarias para llegar al equilibrio puede disminuir.</p></article>
+<article class="card"><h3>Advertencia</h3><p class="explain">Si el precio unitario es igual o menor que el costo variable unitario, el margen de contribución no permite calcular un punto de equilibrio finito con esta fórmula.</p></article>
+<article class="card"><h3>Comprobación</h3><p class="explain">Para comprobar el resultado, multiplica las unidades de equilibrio por el precio y compáralo con los costos totales correspondientes.</p></article>
+</div>
+</section>
+<nav aria-label="Navegación entre temas" class="page-nav"><a href="09-ejercicios.html">← Ejercicios</a><a href="index.html">⌂ Inicio</a><a href="05-van.html">Valor Actual Neto →</a></nav></div><footer>Punto de Equilibrio · Gestión Empresarial · Presentación interactiva</footer></main><script src="script.js"></script></body></html>
